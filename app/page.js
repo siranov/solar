@@ -23,15 +23,15 @@ export default function Home() {
       <Spacer />
       <div className="flex flex-row justify-evenly">
         <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-[${orange}]`}>67</div>
+          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>67</div>
           <div className="text-[24px]">Members joined</div>
         </div>
         <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-[${orange}]`}>$14500</div>
+          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>$14500</div>
           <div className="text-[24px]">Money Raised</div>
         </div>
         <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-[${orange}]`}>2</div>
+          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>2</div>
           <div className="text-[24px]">Competitions won</div>
         </div>
       </div>
@@ -39,24 +39,24 @@ export default function Home() {
       <Spacer />
       <p className="text-[24px]">
         <span>We started as a </span>
-        <span className={`text-[${orange}]`}>group of friends </span>
+        <span className={`text-orange`}>group of friends </span>
         <span>passionate about making a 100% carbon emission free car and we evolved into a community. </span>
-        <span className={`text-[${orange}] underline`}>Join us</span>
+        <span className={`text-orange underline`}>Join us</span>
         <span> today and help us build the </span>
-        <span className={`text-[${orange}] font-bold`}>BIGGEST </span>
+        <span className={`text-orange font-bold`}>BIGGEST </span>
         <span>project at University of the Pacific.</span>
       </p>
       <Spacer />
       <Spacer />
-      <div className={`text-[28px] font-bold text-[${orange}]`}>Latest progress</div>
+      <div className={`text-[28px] font-bold text-orange`}>Latest progress</div>
       <Spacer />
       <Progress photo="photo1.png" headline="Math is mathing!" date="September 9th, 2023" team="Chassis Team" text="Chassis team is once again sharing good news! The FEA has been finalised and sent for review" />
       <Spacer />
       <Progress photo="photo.png" headline="Started a fire in Baun hall..." date="September 7th, 2023" team="Electrical Team" text="Electrical team is wildin’ big time. They short circuited a bunch of batteries and started a fire..." />
       <Spacer />
-      <div className={`self-center h-[40px] p-[20px] text-[${orange}] text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Show more</div>
+      <div className={`self-center h-[40px] p-[20px] text-orange text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Show more</div>
       <Spacer />
-      <div className={`text-[28px] font-bold text-[${orange}]`}>Sponsors</div>
+      <div className={`text-[28px] font-bold text-orange`}>Sponsors</div>
       <div className="text-white text-[20px]">One community. One goal.</div>
       <Spacer></Spacer>
       <div className="flex flex-wrap gap-y-[10px]">
@@ -68,9 +68,9 @@ export default function Home() {
         <Sponsor text="D. Lee Family" />
       </div>
       <Spacer></Spacer>
-      <div className={`self-center h-[40px] p-[20px] text-[${orange}] text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Sponsor us!</div>
+      <div className={`self-center h-[40px] p-[20px] text-orange text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Sponsor us!</div>
       <Spacer />
-      <div className={`text-[28px] font-bold text-[${orange}]`}>Current Members</div>
+      <div className={`text-[28px] font-bold text-orange`}>Current Members</div>
       <Spacer></Spacer>
       <div className="flex flex-wrap gap-y-[40px]">
         <Member text="Aleksei Macatuno" position="Founder & President" />
