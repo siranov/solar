@@ -1,14 +1,12 @@
 import Image from 'next/image'
-import './globals.css'
 
 
 export default function Home() {
-  const orange = "#ff5c00";
   return <div className="w-[100%] bg-black flex flex-col">
     <div className="flex w-[900px] p-[20px] flex-col self-center">
       <div className="flex flex-row items-center">
         <div className="flex flex-col float-left">
-          <div className={`text-[${orange}] text-[24px] font-bold`}>Solar Car Project</div>
+          <div className={`text-orange text-[24px] font-bold`}>Solar Car Project</div>
           <div className="text-[16px] ">At University of the Pacific</div>
         </div>
         <div className="grow flex flex-wrap justify-end overflow-hidden">
