@@ -1,10 +1,9 @@
 import Image from 'next/image'
+import './globals.css'
 
 const orange = "#ff5c00";
 
 export default function Home() {
-
-
   return <div className="w-[100%] bg-black flex flex-col">
     <div className="flex w-[900px] p-[20px] flex-col self-center">
       <div className="flex flex-row items-center">
