@@ -111,7 +111,7 @@ function Progress(props) {
 
 function Member(props) {
   return <div className="w-[calc(100%/4)] flex flex-col items-center">
-    <div className="h-[150px] w-[150px] rounded-[100px] bg-gray-500"></div>
+    <div className="h-[150px] w-[150px] rounded-[100px] bg-gray"></div>
     <Spacer />
     <div className="text-[20px] font-bold">{props.text}</div>
     <div className="text-[20px]">{props.position}</div>
