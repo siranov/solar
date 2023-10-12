@@ -9,7 +9,9 @@ module.exports = {
   theme: {
     colors: {
       'orange': "#ff5c00",
-      'gray': "#d9d9d9"
+      'gray': "#d9d9d9",
+      "white": "#ffffff",
+      "black": "#000000",
     },
   },
   plugins: [],
