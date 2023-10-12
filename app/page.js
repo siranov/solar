@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import './globals.css'
 
-const orange = "#ff5c00";
 
 export default function Home() {
+  const orange = "#ff5c00";
   return <div className="w-[100%] bg-black flex flex-col">
     <div className="flex w-[900px] p-[20px] flex-col self-center">
       <div className="flex flex-row items-center">
@@ -75,18 +75,18 @@ export default function Home() {
       <div className={`text-[28px] font-bold text-[${orange}]`}>Current Members</div>
       <Spacer></Spacer>
       <div className="flex flex-wrap gap-y-[40px]">
-        <Member text="Aleksei Macatuno" position="Founder & President"/>
-        <Member text="Ariana Desai" position="Co-Founder & VP"/>
-        <Member text="Simran Pravin" position="Ergonomics team lead"/>
-        <Member text="Zhangir Siranov" position="Chief Starlord"/>
-        <Member text="Zack Hearn" position="Chassis team lead"/>
-        <Member text="Ray Magu" position="Media team lead"/>
-        <Member text="Marcus Medina" position="Electrical team lead"/>
-        <Member text="An Pham" position="Telematics team lead"/>
-        <Member text="Quoc-Anh" position="Electrical team lead"/>
-        <Member text="Pranav Jayakumar" position="Telematics member"/>
-        <Member text="Miguel Recinos" position="Telematics member"/>
-        <Member text="Kevin Yang" position="Telematics member"/>
+        <Member text="Aleksei Macatuno" position="Founder & President" />
+        <Member text="Ariana Desai" position="Co-Founder & VP" />
+        <Member text="Simran Pravin" position="Ergonomics team lead" />
+        <Member text="Zhangir Siranov" position="Chief Starlord" />
+        <Member text="Zack Hearn" position="Chassis team lead" />
+        <Member text="Ray Magu" position="Media team lead" />
+        <Member text="Marcus Medina" position="Electrical team lead" />
+        <Member text="An Pham" position="Telematics team lead" />
+        <Member text="Quoc-Anh" position="Electrical team lead" />
+        <Member text="Pranav Jayakumar" position="Telematics member" />
+        <Member text="Miguel Recinos" position="Telematics member" />
+        <Member text="Kevin Yang" position="Telematics member" />
       </div>
     </div>
   </div >;
