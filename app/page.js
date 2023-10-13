@@ -1,6 +1,52 @@
 import Image from 'next/image'
 
+const members = [
+  { "name": "Aleksei Macatuno", "team": "Founder & President", "image": "https://media.licdn.com/dms/image/D5635AQHy42ES4Q2i8w/profile-framedphoto-shrink_400_400/0/1695092762584?e=1697767200&v=beta&t=3l7OfgqlQtwsdZOGvOcZY1ZKUo9Bz-4W8CssVTbh-gM" },
+  { "name": "Ariana Desai", "team": "Co-Founder & VP", "image": "https://media.licdn.com/dms/image/D4E03AQFG46OLLgKcjQ/profile-displayphoto-shrink_400_400/0/1686098367230?e=1702512000&v=beta&t=T6zTaxbKKf1ixsw9uHqUjQe9BGb_EROI6OQ3xfQFhew" },
+  { "name": "Simran Pravin", "team": "Officer", "image": "" },
+  { "name": "Zhangir Siranov", "team": "Chief Starlord", "image": "https://media.licdn.com/dms/image/D5603AQFyx0H__BwGzA/profile-displayphoto-shrink_400_400/0/1683002213630?e=1702512000&v=beta&t=S6ly6qMuM8l6TY5S1m3WG7PxvlJhRNCG6tEAEeQH-Ck" },
+  { "name": "Zack Hearn", "team": "Chassis Team Lead", "image": "https://media.licdn.com/dms/image/D5603AQF-utE6Q1niaQ/profile-displayphoto-shrink_400_400/0/1693788694172?e=1702512000&v=beta&t=A-YOBQtVKHz11eNB4H1uMHKOPDpGsul-_C2kskBycaE" },
+  { "name": "Ray Magu", "team": "Media Team Lead", "image": "" },
+  { "name": "Marcus Medina", "team": "Electrical Team Lead", "image": "https://media.licdn.com/dms/image/D5635AQHTdWknXgXlWA/profile-framedphoto-shrink_400_400/0/1689427703313?e=1697767200&v=beta&t=X_hdn3w7reYP1xjyqZlfpy2gitMY9SgITVhQ8Rvv-yU" },
+  { "name": "An Pham", "team": "Telematics Team Lead", "image": "https://media.licdn.com/dms/image/D4D03AQGR89_NjTEAfA/profile-displayphoto-shrink_400_400/0/1694377313676?e=1702512000&v=beta&t=UBNZnSgyeuV1uBlJIbvSTMcGw2S564yzDYikQEYwFZ0" },
+  { "name": "Quoc-Anh", "team": "Electrical Team Lead", "image": "https://media.licdn.com/dms/image/C5603AQGXdcMmOdJ_Zw/profile-displayphoto-shrink_400_400/0/1664087605853?e=1702512000&v=beta&t=q-J2iNhnGeT4VvDnIJkJZZPSNbdzk8opurDO0tOaUcQ" },
+  { "name": "Pranav Jayakumar", "team": "Telematics member", "image": "" },
+  { "name": "Miguel Recinos", "team": "Telematics member", "image": "https://media.licdn.com/dms/image/D5635AQE1ws5--hLwLQ/profile-framedphoto-shrink_400_400/0/1682245926351?e=1697767200&v=beta&t=EJIkHlbMXuWx31lzAzw_bmv8n5HsvCkPf8SFdypedSg" },
+];
+
+const progress = [
+  {
+    "photo": "photo1.png",
+    "headline": "FEA Success",
+    "date": "September 9th, 2023",
+    "team": "Chassis Team",
+    "text": "Chassis team is once again sharing good news! The FEA has been finalised and sent for review",
+  },
+  {
+    "photo": "photo.png",
+    "headline": "Welding the batteries ",
+    "date": "September 9th, 2023",
+    "team": "Electrical Team",
+    "text": "Exciting news from electrical team. They spot welded batteries today!",
+  },
+];
+
 export default function Home() {
+  let rm = [];
+  let rp = [];
+  for (let i = 0; i < members.length; i++) {
+    rm.push(<Member text={members[i]['name']} position={members[i]["team"]} image={members[i]["image"]}></Member>);
+  }
+  for (let i = 0; i < progress.length; i++) {
+    rp.push(<>
+      <Progress photo={progress[i]["photo"]}
+        headline={progress[i]["headline"]}
+        date={progress[i]["date"]}
+        team={progress[i]["team"]}
+        text={progress[i]["text"]} />
+      <Spacer />
+    </>);
+  }
   return <div className="w-[100%] bg-black flex flex-col">
     <div className="flex w-[900px] p-[20px] flex-col self-center">
       <div className="flex flex-row items-center">
@@ -22,15 +68,15 @@ export default function Home() {
       <Spacer />
       <div className="flex flex-row justify-evenly">
         <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>67</div>
-          <div className="text-[24px]">Members joined</div>
+          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>47</div>
+          <div className="text-[24px]">Active members</div>
         </div>
         <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>$14500</div>
-          <div className="text-[24px]">Money Raised</div>
+          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>17</div>
+          <div className="text-[24px]">People supported us</div>
         </div>
         <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>2</div>
+          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>1</div>
           <div className="text-[24px]">Competitions won</div>
         </div>
       </div>
@@ -49,10 +95,7 @@ export default function Home() {
       <Spacer />
       <div className={`text-[28px] font-bold text-orange`}>Latest progress</div>
       <Spacer />
-      <Progress photo="photo1.png" headline="Math is mathing!" date="September 9th, 2023" team="Chassis Team" text="Chassis team is once again sharing good news! The FEA has been finalised and sent for review" />
-      <Spacer />
-      <Progress photo="photo.png" headline="Started a fire in Baun hall..." date="September 7th, 2023" team="Electrical Team" text="Electrical team is wildin’ big time. They short circuited a bunch of batteries and started a fire..." />
-      <Spacer />
+      {rp}
       <div className={`self-center h-[40px] p-[20px] text-orange text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Show more</div>
       <Spacer />
       <div className={`text-[28px] font-bold text-orange`}>Sponsors</div>
@@ -71,19 +114,9 @@ export default function Home() {
       <Spacer />
       <div className={`text-[28px] font-bold text-orange`}>Current Members</div>
       <Spacer></Spacer>
+      { }
       <div className="flex flex-wrap gap-y-[40px]">
-        <Member text="Aleksei Macatuno" position="Founder & President" />
-        <Member text="Ariana Desai" position="Co-Founder & VP" />
-        <Member text="Simran Pravin" position="Ergonomics team lead" />
-        <Member text="Zhangir Siranov" position="Chief Starlord" />
-        <Member text="Zack Hearn" position="Chassis team lead" />
-        <Member text="Ray Magu" position="Media team lead" />
-        <Member text="Marcus Medina" position="Electrical team lead" />
-        <Member text="An Pham" position="Telematics team lead" />
-        <Member text="Quoc-Anh" position="Electrical team lead" />
-        <Member text="Pranav Jayakumar" position="Telematics member" />
-        <Member text="Miguel Recinos" position="Telematics member" />
-        <Member text="Kevin Yang" position="Telematics member" />
+        {rm}
       </div>
     </div>
   </div >;
@@ -103,7 +136,7 @@ function Progress(props) {
       <div className="text-white/[0.5] text-[20px]">{props.date}</div>
       <div className="h-[20px]" />
       <div className="flex flex-wrap">
-        <div className="h-[40px] rounded-lg pl-[20px] pr-[20px] bg-purple-500 flex justify-center items-center">{props.team}</div>
+        <div className="h-[40px] rounded-lg pl-[20px] pr-[20px] bg-gray/[0.6] flex justify-center items-center">{props.team}</div>
       </div>
     </div>
   </div>;
@@ -111,10 +144,12 @@ function Progress(props) {
 
 function Member(props) {
   return <div className="w-[calc(100%/4)] flex flex-col items-center">
-    <div className="h-[150px] w-[150px] rounded-[100px] bg-gray"></div>
+    <div className="h-[150px] w-[150px] rounded-[100px] bg-gray overflow-hidden">
+      <img src={props.image} className="h-[150px] w-[150px]"></img>
+    </div>
     <Spacer />
     <div className="text-[20px] font-bold">{props.text}</div>
-    <div className="text-[20px]">{props.position}</div>
+    <div className="text-[20px] text-white/[0.7]">{props.position}</div>
   </div>;
 }
 
