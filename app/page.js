@@ -67,20 +67,16 @@ export default function Home() {
       "mobile": "w-[calc(100%/3)] flex flex-col items-center"
     },
     "bigN": {
-      "desktop": `text-[72px] text-[FF5C00] font-bold text-orange`,
+      "desktop": "text-[72px] text-[FF5C00] font-bold text-orange",
       "mobile": "text-[32px] text-[FF5C00] font-bold text-orange"
     },
     "smallN": {
-      "dekstop": "text-white text-[24px]",
+      "desktop": "text-white text-[24px]",
       "mobile": "text-white text-[16px] text-center"
     },
     "text": {
-      "desktop": "",
-      "mobile": "",
-    },
-    "accentText": {
-      "desktop": "",
-      "mobile": "",
+      "desktop": "text-[24px]",
+      "mobile": "text-[16px]",
     },
     "motoAccent": {},
   };
@@ -109,7 +105,7 @@ export default function Home() {
           <HeaderButton text="Sponsors" />
           <HeaderButton text="Members" />
           <HeaderButton b={true} text="Sponsor us" url="https://pacific.scalefunder.com/cfund/project/35830" />
-        </div> : <></>}
+        </div> : <div></div>}
       </div>
       <Spacer />
       <div className="text-[30px] font-bold">They said we couldn't. So we did.</div>
