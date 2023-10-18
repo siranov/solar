@@ -51,7 +51,7 @@ export default function Home() {
 
   let cieses = {
     "body": {
-      "mobile": "flex w-[100%] p-[20px] flex-col self-center",
+      "mobile": "flex w-[100%] p-[20px] flex-col self-center overflow-x-hidden",
       "desktop": "flex w-[900px] p-[20px] flex-col self-center"
     },
     "row1": {
