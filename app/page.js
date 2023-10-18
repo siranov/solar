@@ -48,42 +48,90 @@ export default function Home() {
       <Spacer />
     </>);
   }
+
+  let cieses = {
+    "body": {
+      "mobile": "flex w-[100%] p-[20px] flex-col self-center",
+      "desktop": "flex w-[900px] p-[20px] flex-col self-center"
+    },
+    "row1": {
+      "mobile": "flex flex-col",
+      "desktop": "flex flex-row items-center",
+    },
+    "headers": {
+      "desktop": "grow flex flex-wrap justify-end overflow-hidden",
+      "mobile": "flex flex-wrap items-center justify-center gap-y-[10px]",
+    },
+    "numberCol": {
+      "desktop": "flex-none flex flex-col items-center",
+      "mobile": "w-[calc(100%/3)] flex flex-col items-center"
+    },
+    "bigN": {
+      "desktop": `text-[72px] text-[FF5C00] font-bold text-orange`,
+      "mobile": "text-[32px] text-[FF5C00] font-bold text-orange"
+    },
+    "smallN": {
+      "dekstop": "text-white text-[24px]",
+      "mobile": "text-white text-[16px] text-center"
+    },
+    "text": {
+      "desktop": "",
+      "mobile": "",
+    },
+    "accentText": {
+      "desktop": "",
+      "mobile": "",
+    },
+    "motoAccent": {},
+  };
+  let orient =  'desktop';
+  if (typeof window !== 'undefined') {
+    if(window.innerWidth < 1000){
+      orient = "mobile";
+    }
+  }
+
+
+  function c(input) {
+    return cieses[input][orient];
+  }
+
   return <div className="w-[100%] bg-black flex flex-col">
-    <div className="flex w-[900px] p-[20px] flex-col self-center">
-      <div className="flex flex-row items-center">
+    <div className={c("body")}>
+      <div className={c("row1")}>
         <div className="flex flex-col float-left">
           <div className={`text-orange text-[24px] font-bold`}>Solar Car Project</div>
           <div className="text-[16px] ">At University of the Pacific</div>
         </div>
-        <div className="grow flex flex-wrap justify-end overflow-hidden">
+        {orient == "desktop" ? <div className={c("headers")}>
           <HeaderButton text="About" />
           <HeaderButton text="Progress" />
           <HeaderButton text="Sponsors" />
           <HeaderButton text="Members" />
           <HeaderButton b={true} text="Sponsor us" url="https://pacific.scalefunder.com/cfund/project/35830" />
-        </div>
+        </div> : <></>}
       </div>
       <Spacer />
       <div className="text-[30px] font-bold">They said we couldn't. So we did.</div>
       <img src="car.png" className="w-[100%] object-cover"></img>
       <Spacer />
       <div className="flex flex-row justify-evenly">
-        <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>47</div>
-          <div className="text-[24px]">Active members</div>
+        <div className={c("numberCol")}>
+          <div className={c("bigN")}>47</div>
+          <div className={c("smallN")}>Active members</div>
         </div>
-        <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>17</div>
-          <div className="text-[24px]">People supported us</div>
+        <div className={c("numberCol")}>
+          <div className={c("bigN")}>17</div>
+          <div className={c("smallN")}>People supported us</div>
         </div>
-        <div className="flex-none flex flex-col items-center">
-          <div className={`text-[72px] text-[FF5C00] font-bold text-orange`}>1</div>
-          <div className="text-[24px]">Competitions won</div>
+        <div className={c("numberCol")}>
+          <div className={c("bigN")}>1</div>
+          <div className={c("smallN")}>Competitions won</div>
         </div>
       </div>
       <Spacer />
       <Spacer />
-      <p className="text-[24px]">
+      <p className={c("text")}>
         <span>We started as a </span>
         <span className={`text-orange`}>group of friends </span>
         <span>passionate about making a 100% carbon emission free car and we evolved into a community. </span>
@@ -111,7 +159,7 @@ export default function Home() {
         <Sponsor text="D. Lee Family" />
       </div>
       <Spacer></Spacer>
-      <div onClick={()=>{
+      <div onClick={() => {
         window.open("https://pacific.scalefunder.com/cfund/project/35830", "_blank");
       }} className={`self-center cursor-pointer h-[40px] p-[20px] text-orange text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Sponsor us!</div>
       <Spacer />
@@ -192,8 +240,8 @@ function Spacer() {
 
 function HeaderButton(props) {
   let url = structuredClone(props.url);
-  return <div onClick={()=>{
-    if(url!=null){
+  return <div onClick={() => {
+    if (url != null) {
       window.open(url, "_blank");
     }
   }} className={`h-[30px] cursor-pointer pl-[20px] ${props.b ? "border-[3px] border-white" : ""} rounded-md pr-[20px] flex items-center text-white fontbold`}>{props.text}</div>;
