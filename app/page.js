@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image'
 
 const members = [
@@ -59,7 +60,7 @@ export default function Home() {
           <HeaderButton text="Progress" />
           <HeaderButton text="Sponsors" />
           <HeaderButton text="Members" />
-          <HeaderButton b={true} text="Sponsor us" />
+          <HeaderButton b={true} text="Sponsor us" url="https://pacific.scalefunder.com/cfund/project/35830" />
         </div>
       </div>
       <Spacer />
@@ -110,17 +111,19 @@ export default function Home() {
         <Sponsor text="D. Lee Family" />
       </div>
       <Spacer></Spacer>
-      <div className={`self-center h-[40px] p-[20px] text-orange text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Sponsor us!</div>
+      <div onClick={()=>{
+        window.open("https://pacific.scalefunder.com/cfund/project/35830", "_blank");
+      }} className={`self-center cursor-pointer h-[40px] p-[20px] text-orange text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Sponsor us!</div>
       <Spacer />
       <Spacer />
       <div className={`text-[28px] font-bold text-orange`}>Merch</div>
       <div className="h-[20px]"></div>
       <div className="flex flex-wrap w-[100%] gap-y-[20px]">
-        {<MerchItem name="Battery Key Chain" price="1.99 $" photo="https://i.imgur.com/IqfMv6S.jpg"/>}
+        {<MerchItem name="Battery Key Chain" price="1.99 $" photo="https://i.imgur.com/IqfMv6S.jpg" />}
         {<MerchItem name="T-Shirt" price="19.99 $" photo="https://i.imgur.com/2KOSZ8v.jpg" />}
-        {<MerchItem name="Stickers" price="2.99 $" photo="https://i.imgur.com/dq3zWdI.jpg"/>}
+        {<MerchItem name="Stickers" price="2.99 $" photo="https://i.imgur.com/dq3zWdI.jpg" />}
       </div>
-      <Spacer/>
+      <Spacer />
       <div className="self-center text-white text-[20px]">Send a message to +1 908 200 6006 to order!</div>
       <Spacer />
       <div className={`text-[28px] font-bold text-orange`}>Current Members</div>
@@ -188,6 +191,11 @@ function Spacer() {
 }
 
 function HeaderButton(props) {
-  return <div className={`h-[30px] pl-[20px] ${props.b ? "border-[3px] border-white" : ""} rounded-md pr-[20px] flex items-center text-white fontbold`}>{props.text}</div>;
+  let url = structuredClone(props.url);
+  return <div onClick={()=>{
+    if(url!=null){
+      window.open(url, "_blank");
+    }
+  }} className={`h-[30px] cursor-pointer pl-[20px] ${props.b ? "border-[3px] border-white" : ""} rounded-md pr-[20px] flex items-center text-white fontbold`}>{props.text}</div>;
 }
 
