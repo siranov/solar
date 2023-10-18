@@ -112,6 +112,17 @@ export default function Home() {
       <Spacer></Spacer>
       <div className={`self-center h-[40px] p-[20px] text-orange text-[24px] font-bold border-[#ff5c00] border-[4px] flex items-center justify-center rounded-md`}>Sponsor us!</div>
       <Spacer />
+      <Spacer />
+      <div className={`text-[28px] font-bold text-orange`}>Merch</div>
+      <div className="h-[20px]"></div>
+      <div className="flex flex-wrap w-[100%] gap-y-[20px]">
+        {<MerchItem name="Battery Key Chain" price="1.99 $" photo="https://i.imgur.com/IqfMv6S.jpg"/>}
+        {<MerchItem name="T-Shirt" price="19.99 $" photo="https://i.imgur.com/2KOSZ8v.jpg" />}
+        {<MerchItem name="Stickers" price="2.99 $" photo="https://i.imgur.com/dq3zWdI.jpg"/>}
+      </div>
+      <Spacer/>
+      <div className="self-center text-white text-[20px]">Send a message to +1 908 200 6006 to order!</div>
+      <Spacer />
       <div className={`text-[28px] font-bold text-orange`}>Current Members</div>
       <Spacer></Spacer>
       { }
@@ -139,6 +150,18 @@ function Progress(props) {
         <div className="h-[40px] rounded-lg pl-[20px] pr-[20px] bg-gray/[0.6] flex justify-center items-center">{props.team}</div>
       </div>
     </div>
+  </div>;
+}
+
+function MerchItem(props) {
+  return <div className="flex flex-col w-[50%] items-center">
+    <div className="h-[300px] w-[300px] bg-gray rounded-md object-cover overflow-hidden">
+      <img src={props.photo} className="h-[300px] w-[300px] object-cover"></img>
+    </div>
+    <div className="h-[10px]"></div>
+    <div className="font-bold text-white text-[20px]">{props.name}</div>
+    <div className="h-[10px]"></div>
+    <div className="font-bold text-white text-[32px]">{props.price}</div>
   </div>;
 }
 
