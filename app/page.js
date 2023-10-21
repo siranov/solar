@@ -92,7 +92,7 @@ export default function Home() {
     return cieses[input][orient];
   }
 
-  return <div className="w-[100%] bg-black flex flex-col">
+  return window!="undefined"?<div className="w-[100%] bg-black flex flex-col">
     <div className={c("body")}>
       <div className={c("row1")}>
         <div className="flex flex-col float-left">
@@ -177,7 +177,7 @@ export default function Home() {
         {rm}
       </div>
     </div>
-  </div >;
+  </div >:<div className="h-[100%] w-[100%] bg-black"></div>;
 }
 
 function Progress(props) {
@@ -199,6 +199,11 @@ function Progress(props) {
     </div>
   </div>;
 }
+
+function Raffle(props){
+  return <div></div>;
+}
+
 
 function MerchItem(props) {
   return <div className="flex flex-col w-[50%] items-center">
