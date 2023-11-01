@@ -109,6 +109,10 @@ export default function Home() {
       "desktop": "flex flex-col w-[50%] items-center",
       "mobile": "flex flex-col w-[100%] items-center",
     },
+    "member":{
+      "desktop": "w-[calc(100%/4)] flex flex-col items-center text-center",
+      "mobile": "w-[calc(100%/2)] flex flex-col items-center text-center",
+    },
   };
   let orient = 'desktop';
   if (typeof window !== 'undefined') {
@@ -120,7 +124,7 @@ export default function Home() {
   }
 
   for (let i = 0; i < members.length; i++) {
-    rm.push(<Member text={members[i]['name']} position={members[i]["team"]} image={members[i]["image"]}></Member>);
+    rm.push(<Member cs={cieses["member"]} orient={orient} text={members[i]['name']} position={members[i]["team"]} image={members[i]["image"]}></Member>);
   }
   for(let i =0; i<sponsors.length; i++){
     rs.push(<Sponsor cs={cieses["sponsor"]} orient={orient} text={sponsors[i]["name"]} />);
@@ -262,7 +266,7 @@ function MerchItem(props) {
 }
 
 function Member(props) {
-  return <div className="w-[calc(100%/4)] flex flex-col items-center">
+  return <div className={props.cs[props.orient]}>
     <div className="h-[150px] w-[150px] rounded-[100px] bg-gray overflow-hidden">
       <img src={props.image} className="h-[150px] w-[150px]"></img>
     </div>
