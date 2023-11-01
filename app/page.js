@@ -221,7 +221,7 @@ export default function Home() {
       <div className="h-[20px]"></div>
       <div className="flex flex-wrap w-[100%] gap-y-[20px]">
         {<MerchItem cs={cieses["merch"]} orient={orient} name="Battery Key Chain" price="1.99 $" photo="https://i.imgur.com/IqfMv6S.jpg" />}
-        {<MerchItem cs={cieses["merch"]} orient={orient} name="T-Shirt" price="19.99 $" photo="https://i.imgur.com/2KOSZ8v.jpg" />}
+        {<MerchItem cs={cieses["merch"]} orient={orient} name="T-Shirt" price="21.99 $" photo="https://i.imgur.com/m44s9BU.png" />}
         {<MerchItem cs={cieses["merch"]} orient={orient} name="Stickers" price="2.99 $" photo="https://i.imgur.com/dq3zWdI.jpg" />}
       </div>
       <Spacer />
@@ -263,7 +263,7 @@ function Progress(props) {
 
 function MerchItem(props) {
   return <div className={props.cs[props.orient]}>
-    <div className="h-[300px] w-[300px] bg-gray rounded-md object-cover overflow-hidden">
+    <div className="h-[300px] w-[300px] bg-white rounded-md object-cover overflow-hidden">
       <img src={props.photo} className="h-[300px] w-[300px] object-cover"></img>
     </div>
     <div className="h-[10px]"></div>
