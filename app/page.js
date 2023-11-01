@@ -87,6 +87,10 @@ export default function Home() {
       "desktop": "text-[24px]",
       "mobile": "text-[16px]",
     },
+    "bigText": {
+      "desktop": "text-[24px]",
+      "mobile": "text-[20px]"
+    },
     "progress": {
       "1": {
         "desktop": "flex flex-row items-center",
@@ -221,7 +225,11 @@ export default function Home() {
         {<MerchItem cs={cieses["merch"]} orient={orient} name="Stickers" price="2.99 $" photo="https://i.imgur.com/dq3zWdI.jpg" />}
       </div>
       <Spacer />
-      <div className="self-center text-white text-[20px] text-center">Send a message to +1 908 200 6006 to order!</div>
+      <p className={c("bigText") + " text-center"}>
+        <span>Send a message to </span>
+        <span onClick={()=>{window.open("sms:+19082006006", "_blank");}} className={`text-orange underline`}>+1 908 200 6006</span>
+        <span> to order</span>
+      </p>
       <Spacer />
       <div className={`text-[28px] font-bold text-orange`}>Current Members</div>
       <Spacer></Spacer>
