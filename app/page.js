@@ -193,7 +193,9 @@ export default function Home() {
         <span>We started as a </span>
         <span className={`text-orange`}>group of friends </span>
         <span>passionate about making a 100% carbon emission free car and we evolved into a community. </span>
-        <span className={`text-orange underline`}>Join us</span>
+        <span onClick={()=>{
+          window.open("https://pacific.scalefunder.com/cfund/project/35830", "_blank");
+        }} className={`text-orange underline`}>Join us</span>
         <span> today and help us build the </span>
         <span className={`text-orange font-bold`}>BIGGEST </span>
         <span>project at University of the Pacific.</span>
