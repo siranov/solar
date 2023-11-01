@@ -106,8 +106,8 @@ export default function Home() {
       },
     },
     "sponsor": {
-      "desktop": "w-[calc(100%/4)] h-[150px] flex items-center justify-center",
-      "mobile":"w-[calc(100%/2)] h-[150px] flex items-center justify-center",
+      "desktop": "w-[calc(100%/4-2.5px)] h-[150px] rounded-md border-white/[0.5] border-[1px] flex items-center justify-center",
+      "mobile":"w-[calc(100%/2-5px)] h-[150px] rounded-md border-white/[0.5] border-[1px] flex items-center justify-center",
     },
     "merch": {
       "desktop": "flex flex-col w-[50%] items-center",
@@ -208,7 +208,7 @@ export default function Home() {
       <div className={`text-[28px] font-bold text-orange`}>Sponsors</div>
       <div className="text-white text-[20px]">One community. One goal.</div>
       <Spacer></Spacer>
-      <div className="flex flex-wrap gap-y-[10px]">
+      <div className="flex flex-wrap gap-y-[10px] gap-x-[10px]">
         {rs}
       </div>
       <Spacer></Spacer>
