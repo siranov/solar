@@ -22,5 +22,10 @@ export default function RaffleUpdate() {
         <div className="h-[320px] w-[300px] rounded-lg object-cover overflow-hidden">
             <img src="https://i.imgur.com/OaQ8ctW.png" className="h-[320px] w-[300px] object-cover"></img>
         </div>
+        <div className="h-[20px]"></div>
+        <div onClick={()=>{updateCounter(counter+1);}} className="h-[50px] w-[300px] rounded-md flex items-center justify-center bg-gray/[0.3]">Add to counter</div>
+        <div className="h-[20px]"></div>
+        <div onClick={()=>{updateCounter(counter-1);}} className="h-[50px] w-[300px] rounded-md flex items-center justify-center bg-gray/[0.3]">Remove from counter</div>
     </div>;
+
 }

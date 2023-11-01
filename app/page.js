@@ -32,22 +32,31 @@ const progress = [
   },
 ];
 
+const sponsors = [
+  {
+    "name": "Tap Plastics",
+  },
+  {
+    "name": "California Welding & Supply",
+  },
+  {
+    "name": "Nunes Family",
+  },
+  {
+    "name": "Pelera Family",
+  },
+  {
+    "name": "Desai Family",
+  },
+  {
+    "name": "D. Lee Family",
+  },
+];
+
 export default function Home() {
   let rm = [];
   let rp = [];
-  for (let i = 0; i < members.length; i++) {
-    rm.push(<Member text={members[i]['name']} position={members[i]["team"]} image={members[i]["image"]}></Member>);
-  }
-  for (let i = 0; i < progress.length; i++) {
-    rp.push(<>
-      <Progress photo={progress[i]["photo"]}
-        headline={progress[i]["headline"]}
-        date={progress[i]["date"]}
-        team={progress[i]["team"]}
-        text={progress[i]["text"]} />
-      <Spacer />
-    </>);
-  }
+  let rs = [];
 
   let cieses = {
     "body": {
@@ -78,21 +87,64 @@ export default function Home() {
       "desktop": "text-[24px]",
       "mobile": "text-[16px]",
     },
-    "motoAccent": {},
+    "progress": {
+      "1": {
+        "desktop": "flex flex-row items-center",
+        "mobile": "flex flex-col w-[100%] p-[20px]"
+      },
+      "2": {
+        "desktop": "w-[400px] h-[300px] bg-gray-200 rounded-lg overflow-hidden flex items-center object-cover",
+        "mobile": "w-[100%] h-[200px] bg-gray-200 rounded-lg overflow-hidden flex items-center object-cover mb-[20px]",
+      },
+      "3": {
+        "desktop": "grow flex flex-col w-[calc(100%-440px)]",
+        "mobile": "flex flex-col"
+      },
+    },
+    "sponsor": {
+      "desktop": "w-[calc(100%/4)] h-[150px] flex items-center justify-center",
+      "mobile":"w-[calc(100%/2)] h-[150px] flex items-center justify-center",
+    },
+    "merch": {
+      "desktop": "flex flex-col w-[50%] items-center",
+      "mobile": "flex flex-col w-[100%] items-center",
+    },
   };
-  let orient =  'desktop';
+  let orient = 'desktop';
   if (typeof window !== 'undefined') {
-    if(window.innerWidth < 1000){
+    if (window.innerWidth < 1000) {
       orient = "mobile";
     }
+  } else {
+
   }
+
+  for (let i = 0; i < members.length; i++) {
+    rm.push(<Member text={members[i]['name']} position={members[i]["team"]} image={members[i]["image"]}></Member>);
+  }
+  for(let i =0; i<sponsors.length; i++){
+    rs.push(<Sponsor cs={cieses["sponsor"]} orient={orient} text={sponsors[i]["name"]} />);
+  }
+  for (let i = 0; i < progress.length; i++) {
+    rp.push(<>
+      <Progress cs={cieses["progress"]} orient={orient} photo={progress[i]["photo"]}
+        headline={progress[i]["headline"]}
+        date={progress[i]["date"]}
+        team={progress[i]["team"]}
+        text={progress[i]["text"]} />
+      <Spacer />
+    </>);
+  }
+
+
+
 
 
   function c(input) {
     return cieses[input][orient];
   }
 
-  return window!="undefined"?<div className="w-[100%] bg-black flex flex-col">
+  return (typeof window !== 'undefined') ? <div className="w-[100%] bg-black flex flex-col">
     <div className={c("body")}>
       <div className={c("row1")}>
         <div className="flex flex-col float-left">
@@ -105,7 +157,9 @@ export default function Home() {
           <HeaderButton text="Sponsors" />
           <HeaderButton text="Members" />
           <HeaderButton b={true} text="Sponsor us" url="https://pacific.scalefunder.com/cfund/project/35830" />
-        </div> : <div></div>}
+        </div> : <div onClick={() => {
+          window.open("https://pacific.scalefunder.com/cfund/project/35830", "_blank");
+        }} className="mt-[20px] h-[50px] cursor-pointer w-[100%] rounded-md border-white border-[2px] flex items-center justify-center">Sponsor us!</div>}
       </div>
       <Spacer />
       <div className="text-[30px] font-bold">They said we couldn't. So we did.</div>
@@ -147,12 +201,7 @@ export default function Home() {
       <div className="text-white text-[20px]">One community. One goal.</div>
       <Spacer></Spacer>
       <div className="flex flex-wrap gap-y-[10px]">
-        <Sponsor text="Tap Plastics" />
-        <Sponsor text="California Welding & Supply" />
-        <Sponsor text="Nunes Family" />
-        <Sponsor text="Pelera Family" />
-        <Sponsor text="Desai Family" />
-        <Sponsor text="D. Lee Family" />
+        {rs}
       </div>
       <Spacer></Spacer>
       <div onClick={() => {
@@ -163,12 +212,12 @@ export default function Home() {
       <div className={`text-[28px] font-bold text-orange`}>Merch</div>
       <div className="h-[20px]"></div>
       <div className="flex flex-wrap w-[100%] gap-y-[20px]">
-        {<MerchItem name="Battery Key Chain" price="1.99 $" photo="https://i.imgur.com/IqfMv6S.jpg" />}
-        {<MerchItem name="T-Shirt" price="19.99 $" photo="https://i.imgur.com/2KOSZ8v.jpg" />}
-        {<MerchItem name="Stickers" price="2.99 $" photo="https://i.imgur.com/dq3zWdI.jpg" />}
+        {<MerchItem cs={cieses["merch"]} orient={orient} name="Battery Key Chain" price="1.99 $" photo="https://i.imgur.com/IqfMv6S.jpg" />}
+        {<MerchItem cs={cieses["merch"]} orient={orient} name="T-Shirt" price="19.99 $" photo="https://i.imgur.com/2KOSZ8v.jpg" />}
+        {<MerchItem cs={cieses["merch"]} orient={orient} name="Stickers" price="2.99 $" photo="https://i.imgur.com/dq3zWdI.jpg" />}
       </div>
       <Spacer />
-      <div className="self-center text-white text-[20px]">Send a message to +1 908 200 6006 to order!</div>
+      <div className="self-center text-white text-[20px] text-center">Send a message to +1 908 200 6006 to order!</div>
       <Spacer />
       <div className={`text-[28px] font-bold text-orange`}>Current Members</div>
       <Spacer></Spacer>
@@ -177,16 +226,16 @@ export default function Home() {
         {rm}
       </div>
     </div>
-  </div >:<div className="h-[100%] w-[100%] bg-black"></div>;
+  </div > : <div className="h-[100%] w-[100%] bg-black"></div>;
 }
 
 function Progress(props) {
-  return <div className="flex flex-row items-center">
-    <div className="w-[400px] h-[300px] bg-gray-200 rounded-lg overflow-hidden">
+  return <div className={props.cs["1"][props.orient]}>
+    <div className={props.cs["2"][props.orient]}>
       <img src={props.photo} className="h-[300px] w-[400px] fit-cover"></img>
     </div>
     <div className="w-[40px]"></div>
-    <div className="grow flex flex-col w-[calc(100%-440px)]">
+    <div className={props.cs["3"][props.orient]}>
       <div className="text-[24px] font-bold text-white">{props.headline}</div>
       <div className="h-[20px]" />
       <div className="text-white/[0.7] text-[20px]">{props.text}</div>
@@ -200,13 +249,8 @@ function Progress(props) {
   </div>;
 }
 
-function Raffle(props){
-  return <div></div>;
-}
-
-
 function MerchItem(props) {
-  return <div className="flex flex-col w-[50%] items-center">
+  return <div className={props.cs[props.orient]}>
     <div className="h-[300px] w-[300px] bg-gray rounded-md object-cover overflow-hidden">
       <img src={props.photo} className="h-[300px] w-[300px] object-cover"></img>
     </div>
@@ -229,7 +273,7 @@ function Member(props) {
 }
 
 function Sponsor(props) {
-  return <div className="w-[calc(100%/4)] h-[150px] flex items-center justify-center">
+  return <div className={props.cs[props.orient]}>
     {props.photo != null ? <img src={props.photo}></img> : <></>}
     {props.text != null ? <div className="text-white text-[24px] font-bold text-center">{props.text}</div> : <></>}
   </div>;
