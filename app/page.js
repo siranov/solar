@@ -106,7 +106,7 @@ export default function Home() {
       },
     },
     "sponsor": {
-      "desktop": "w-[calc(100%/4-2.5px)] h-[150px] rounded-md border-white/[0.5] border-[1px] flex items-center justify-center",
+      "desktop": "w-[calc(100%/4-5px)] h-[150px] rounded-md border-white/[0.5] border-[1px] flex items-center justify-center",
       "mobile":"w-[calc(100%/2-5px)] h-[150px] rounded-md border-white/[0.5] border-[1px] flex items-center justify-center",
     },
     "merch": {
